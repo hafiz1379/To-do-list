@@ -1,13 +1,15 @@
-const todoList = document.querySelector('.todo-list');
-const addInput = document.querySelector('.add-input');
-const addButton = document.querySelector('.add-button');
-const clearAllButton = document.querySelector('.clear-all');
+var $ = document
+
+const todoList = $.querySelector('.todo-list');
+const addInput = $.querySelector('.add-input');
+const addButton = $.querySelector('.add-button');
+const clearAllButton = $.querySelector('.clear-all');
 
 export function renderTasks(Task) {
   const tasks = Task.getTasks();
   todoList.innerHTML = '';
   tasks.forEach((task) => {
-    const li = document.createElement('li');
+    const li = $.createElement('li');
     li.className = 'todo-item';
     li.innerHTML = ` 
       <label data-id=${task.id} class="${task.completed ? 'todo-completed' : ''}"> 
