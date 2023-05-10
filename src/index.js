@@ -31,18 +31,18 @@ class Task {
     });
   }
 }
-  window.onload = () => {
-    const todoList = document.querySelector('.todo-list');
-    Task.tasks.forEach((task) => {
-      const li = document.createElement('li');
-      li.className = 'todo-item';
-      li.innerHTML = ` 
+window.onload = () => {
+  const todoList = document.querySelector('.todo-list');
+  Task.tasks.forEach((task) => {
+    const li = document.createElement('li');
+    li.className = 'todo-item';
+    li.innerHTML = ` 
         <label data-id=${task.id} class="${task.completed ? 'todo-completed' : ''}"> 
         <input type="checkbox" class="todo-item-check" ${task.completed ? 'checked' : ''}> 
         ${task.description}    
         </label>
         <i class="fas fa-ellipsis-v item-edit-icon"></i> 
         `;
-      todoList.appendChild(li);
-    });
-  };
+    todoList.appendChild(li);
+  });
+};
