@@ -3,9 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background-color: #fff;
 }
+
 .container {
   display: flex;
   flex-direction: column;
@@ -21,7 +23,7 @@ body {
 
 .container h2 {
   align-self: center;
-  margin-bottom: 10px
+  margin-bottom: 10px;
 }
 
 #todo-list {
@@ -59,7 +61,6 @@ input {
   height: 30px;
   padding: 5px;
 }
-
 
 .add-button {
   background: transparent;
