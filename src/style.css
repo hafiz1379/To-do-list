@@ -1,8 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e8e8e8;
+}
+
 .container {
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 80%;
+  margin-top: 8rem;
+  border: 1px solid #060607c7;
+  margin-left: 10%;
+  box-sizing: border-box;
+  padding: 9px;
+  border-radius: 10px;
+}
+
+.container h2 {
+  align-self: center;
+  margin-bottom: 7px;
 }
 
 #todo-list {
@@ -13,12 +35,14 @@
 ul {
   list-style: none;
   padding: 0;
+  width: 100%;
+  margin: 0;
 }
 
 li {
-  border-bottom: 2px solid lightgray;
-  padding: 6%;
-  width: 240px;
+  padding: 2% 0;
+  border-top: 2px solid lightgray;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -29,8 +53,30 @@ li {
   justify-content: center;
 }
 
+input {
+  border: 1px solid transparent;
+}
+
 .add-input {
-  width: 45%;
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+}
+
+.add-button {
+  background: transparent;
+  border: transparent;
+  margin-left: 5px;
+}
+
+.clear-all {
+  width: 100%;
+  height: 43px;
+  border-radius: 0 0 42px 40px;
+  padding: 5px;
+  border: transparent;
+  background: #ededed4c;
+  cursor: pointer;
 }
 
 .task {
@@ -39,7 +85,24 @@ li {
   border-bottom: 1px solid #ccc;
 }
 
-.todo-completed {
+.todo-completed .todo-item-edit {
   text-decoration: line-through;
   color: #ccc;
+}
+
+.icon {
+  width: 17px;
+  background: url(./3\ dots.jpg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.icon:hover {
+  background: url(./delete.png);
+  width: 15px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
