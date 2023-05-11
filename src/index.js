@@ -4,6 +4,15 @@ import {
   renderTasks, addButton, addInput, clearAllButton,
 } from './modules/todo.js';
 
+function addTask() {
+  const description = addInput.value;
+  if (description) {
+    Task.addTask(description);
+    addInput.value = '';
+    renderTasks(Task);
+  }
+}
+
 renderTasks(Task);
 
 addButton.addEventListener('click', () => {
@@ -15,16 +24,6 @@ addInput.addEventListener('keypress', (event) => {
     addTask();
   }
 });
-
-function addTask() {
-  const description = addInput.value;
-  if (description) {
-    Task.addTask(description);
-    addInput.value = '';
-    renderTasks(Task);
-  }
-}
-
 
 clearAllButton.addEventListener('click', () => {
   const tasks = Task.getTasks();

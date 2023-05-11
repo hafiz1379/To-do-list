@@ -1,4 +1,4 @@
-var $ = document;
+const $ = document;
 
 const todoList = $.querySelector('.todo-list');
 const addInput = $.querySelector('.add-input');
