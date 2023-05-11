@@ -49,4 +49,5 @@ class Task {
     Task.setTasks(tasks);
   }
 }
+
 export default Task;
