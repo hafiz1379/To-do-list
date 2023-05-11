@@ -99,7 +99,7 @@ Run this command:
 
 ```sh
   cd my-folder
-  git clone https://github.com/hafiz1379/Awesome-book.git
+  git clone https://github.com/hafiz1379/To-do-list.git
 
 ### Install
 
@@ -144,11 +144,6 @@ Hafizullah Rasa
 - Twitter: [@twitterhandle](https://twitter.com/Hafizrasa1379?s=35)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/hafizullah-rasa-8436a1257/)
 
-👤 **Sanam Rahimi**
-- GitHub: [@githubhandle](https://github.com/sanamrahimi)
-
-👤 **JORGE CAMARGO**
-- GitHub: [@githubhandle](https://github.com/jicamargoi)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
