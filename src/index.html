@@ -1,32 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>to do list</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <h2>To Do list</h2>
-      <div class="input-container">
-        <input
-          class="add-input"
-          type="text"
-          placeholder="Add to your list..."
-        />
-        <button type="button" class="add-button">
-          <i class="fas fa-sign-in-alt"></i>
-        </button>
-      </div>
-      <ul class="todo-list"></ul>
-      <button type="button" class="clear-all">Clear the completed tasks</button>
-    </div>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To DO List</title>
+</head>
+<body>
+  <div class="to-do-holder">
+    <ul class="ul-to-do">
+      <li class="li-to-do"><span class="li-description title-to-do">Today's To Do</span><img class="refresh"></li>
+      <li class="li-to-do li-to-do-input"><input class="text-li" id="add-text" type=text placeholder="Add to your list..."><img class="enter"></li>
+    </ul>
+    <button class="btn-holder">Clear all completed</button>
+  </div>
+</body>
 </html>
