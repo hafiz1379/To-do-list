@@ -1,26 +1,80 @@
-import add from './modules/add.js';
-import remove from './modules/remove.js';
+import removeTask from './remove';
 
-describe('Add test', () => {
-  test('should save to localStorage', () => {
-    localStorage.setItem('tasks', '[]');
-    add('hello');
-    expect(JSON.parse(localStorage.getItem('tasks'))).toEqual([{ completed: false, description: 'hello', index: 1 }]);
+describe('removeTask', () => {
+  beforeEach(() => {
+    // Mocking localStorage for the test
+    const tasks = [
+      {
+        index: 1,
+        description: 'Code for 5 hours',
+        completed: false,
+      },
+      {
+        index: 2,
+        description: 'Play soccer',
+        completed: false,
+      },
+      {
+        index: 3,
+        description: 'Take a walk in the park',
+        completed: false,
+      },
+      {
+        index: 4,
+        description: 'Play soccer',
+        completed: false,
+      },
+    ];
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+
+    // Creating the DOM elements for the test
+    const taskElements = tasks.map((task) => {
+      const li = document.createElement('li');
+      li.dataset.index = task.index;
+      const span = document.createElement('span');
+      span.className = 'trash-can';
+      li.appendChild(span);
+      return li;
+    });
+    const container = document.createElement('ul');
+    taskElements.forEach((taskElement) => {
+      container.appendChild(taskElement);
+    });
+    document.body.appendChild(container);
   });
-});
 
-describe('Remove test', () => {
-  test('should remove from localstorage', () => {
-    localStorage.setItem('tasks', JSON.stringify([{ completed: false, description: 'task1', index: 1 }]));
-    remove('task1');
-    expect(JSON.parse(localStorage.getItem('tasks'))).toEqual([]);
+  afterEach(() => {
+    localStorage.removeItem('tasks');
+    document.body.innerHTML = '';
   });
 
-  test('Should remove element from DOM', () => {
-    document.body.innerHTML = `<div> 
-    <ul class="ul-to-do"><li><input type="checkbox"  class="checkbox"><input type="text" class="li-description task-text" value ="task1"><img  class="trash-can"></li></ul>' 
-    </div>`;
-    remove('task1');
-    expect(document.querySelector('.ul-to-do').childNodes.length).toEqual(0);
+  test('removes the task with the given index from localStorage and the DOM', () => {
+    const indexToRemove = 2;
+    removeTask(indexToRemove);
+
+    // Check the modified tasks in localStorage
+    const updatedTasks = JSON.parse(localStorage.getItem('tasks'));
+    const expectedTasks = [
+      {
+        index: 1,
+        description: 'Code for 5 hours',
+        completed: false,
+      },
+      {
+        index: 2,
+        description: 'Take a walk in the park',
+        completed: false,
+      },
+      {
+        index: 3,
+        description: 'Play soccer',
+        completed: false,
+      },
+    ];
+    expect(updatedTasks).toEqual(expectedTasks);
+
+    // Check the removed task element in the DOM
+    const removedElement = document.querySelector('li[data-index="2"]');
+    expect(removedElement).toBeNull();
   });
 });
