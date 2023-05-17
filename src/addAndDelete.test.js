@@ -1,8 +1,7 @@
-import removeTask from './remove';
+import removeTask from './remove.js';
 
 describe('removeTask', () => {
   beforeEach(() => {
-    // Mocking localStorage for the test
     const tasks = [
       {
         index: 1,
@@ -73,7 +72,6 @@ describe('removeTask', () => {
     ];
     expect(updatedTasks).toEqual(expectedTasks);
 
-    // Check the removed task element in the DOM
     const removedElement = document.querySelector('li[data-index="2"]');
     expect(removedElement).toBeNull();
   });
