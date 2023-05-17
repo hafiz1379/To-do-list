@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "<a name=\"readme-top\"></a>",
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest",
     "start": "webpack serve --open",
     "build": "webpack",
     "predeploy": "npm run build",
