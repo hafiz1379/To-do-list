@@ -1,4 +1,4 @@
-import { remove } from './remove.js';
+import { remove } from './removeTrash.js';
 
 export default () => {
   const trash = document.querySelector('.trash-can');
