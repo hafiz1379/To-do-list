@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>to do list</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <h2>To Do list</h2>
-      <div class="input-container">
-        <input
-          class="add-input"
-          type="text"
-          placeholder="Add to your list..."
-        />
-        <button type="button" class="add-button">
-          <i class="fas fa-sign-in-alt"></i>
-        </button>
-      </div>
-      <ul class="todo-list"></ul>
-      <button type="button" class="clear-all">Clear the completed tasks</button>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="style.css">
+  <title>To Do List</title>
+</head>
+
+<body>
+  <main class="todo">
+    <h1 class="todo_title">Today's To Do<span class="material-symbols-outlined todo_title-refresh">
+        autorenew
+      </span></h1>
+    <div class="todo_input">
+      <input type="text" id="new-task-input" placeholder="Add to your list..."></input>
+      <span class="material-symbols-outlined" id="addBtn"> subdirectory_arrow_left </span>
     </div>
-  </body>
+    <div>
+      <ul id="todo-list">      
+        
+
+      </ul>
+    </div>
+    <div class="todo_button">
+      <button id="clear-completed" class="todo_clear">Clear all completed</button>
+    </div>
+  </main>
+  <script src="index.js" type="module"></script>
+</body>
+
 </html>
