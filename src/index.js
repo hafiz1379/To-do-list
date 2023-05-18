@@ -21,7 +21,6 @@ const addTask = () => {
   }
   task.value = '';
 };
-
 addBtn.addEventListener('click', addTask);
 
 task.addEventListener('keydown', (event) => {
