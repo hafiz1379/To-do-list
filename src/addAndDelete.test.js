@@ -1,4 +1,13 @@
+import add from './modules/add.js';
 import removeTask from './remove.js';
+
+describe('Add test', () => {
+  test('should save to localStorage', () => {
+    localStorage.setItem('tasks', '[]');
+    add('hello');
+    expect(JSON.parse(localStorage.getItem('tasks'))).toEqual([{ completed: false, description: 'hello', index: 1 }]);
+  });
+});
 
 describe('removeTask', () => {
   beforeEach(() => {
