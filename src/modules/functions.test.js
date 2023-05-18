@@ -74,9 +74,7 @@ describe('complete function', () => {
       { description: 'Task 2', completed: false, index: 2 },
       { description: 'Task 3', completed: false, index: 3 },
     ];
-
     complete(tasks, 1);
-
     expect(tasks[1].completed).toBe(true);
   });
 
@@ -86,9 +84,7 @@ describe('complete function', () => {
       { description: 'Task 2', completed: false, index: 2 },
       { description: 'Task 3', completed: false, index: 3 },
     ];
-
     complete(tasks, 0);
-
     expect(tasks[0].completed).toBe(false);
   });
 });
@@ -100,9 +96,7 @@ describe('edit function', () => {
       { description: 'Task 2', completed: false, index: 2 },
       { description: 'Task 3', completed: false, index: 3 },
     ];
-
     edit(tasks, 1, 'New task description');
-
     expect(tasks[1].description).toBe('New task description');
   });
 });
@@ -116,7 +110,6 @@ describe('clearCompleted function', () => {
     ];
 
     clearCompleted(tasks);
-
     expect(tasks).toEqual([
       { description: 'Task 2', completed: false, index: 1 },
     ]);
@@ -128,9 +121,7 @@ describe('clearCompleted function', () => {
       { description: 'Task 2', completed: false, index: 2 },
       { description: 'Task 3', completed: true, index: 3 },
     ];
-
     clearCompleted(tasks);
-
     expect(tasks[0].index).toBe(1);
   });
 });
